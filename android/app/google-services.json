@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "952614516557",
+    "project_id": "callifex-38e38",
+    "storage_bucket": "callifex-38e38.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:952614516557:android:1d36bf9da6692cb761a904",
+        "android_client_info": {
+          "package_name": "com.example.callifex"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUFGmw_Z6MeUCJcXQ9HeV81gVVbqGJpgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

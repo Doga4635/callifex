@@ -1,0 +1,254 @@
+[
+  {
+    "id": "frontend-developer",
+    "title": "Frontend Geliştirici",
+    "track": "Yazılım",
+    "level": "Başlangıç",
+    "duration": "12 hafta",
+    "summary": "Web'in temelinden etkileşimli arayüzlere ilerle; portföyüne koyabileceğin üç küçük proje üret.",
+    "color": "#335CFF",
+    "order": 1,
+    "modules": [
+      {
+        "title": "Web temelleri",
+        "description": "Tarayıcının nasıl çalıştığını ve erişilebilir sayfa yapısını öğren.",
+        "lessons": [
+          "YouTube içerik önerisi: HTML ve web'in çalışma mantığı",
+          "Kurs yönlendirmesi: HTML5 ve CSS3'e giriş",
+          "Alıştırma: Semantik etiketlerle kişisel tanıtım sayfası"
+        ],
+        "project": "Erişilebilir bir kişisel tanıtım sayfası tasarla ve yayımla."
+      },
+      {
+        "title": "CSS ve responsive tasarım",
+        "description": "Düzen, tipografi, renk ve farklı ekran boyutlarına uyum üzerinde çalış.",
+        "lessons": [
+          "YouTube içerik önerisi: Flexbox ve CSS Grid",
+          "Kurs yönlendirmesi: Responsive web tasarımı",
+          "Alıştırma: Mobil ve masaüstü için ürün kartı"
+        ],
+        "project": "Bir ürün tanıtım sayfasını mobil öncelikli yaklaşımla kodla."
+      },
+      {
+        "title": "JavaScript ve arayüz etkileşimi",
+        "description": "Değişkenler, fonksiyonlar, DOM ve olaylarla sayfana davranış kazandır.",
+        "lessons": [
+          "YouTube içerik önerisi: JavaScript temelleri ve DOM",
+          "Kurs yönlendirmesi: JavaScript ile etkileşimli web",
+          "Alıştırma: Form doğrulama ve filtrelenebilir liste"
+        ],
+        "project": "Aranabilir ve filtrelenebilir bir etkinlik keşif arayüzü geliştir."
+      }
+    ]
+  },
+  {
+    "id": "python-data-analysis",
+    "title": "Python ile Veri Analizi",
+    "track": "Yazılım",
+    "level": "Başlangıç",
+    "duration": "10 hafta",
+    "summary": "Python ve temel analiz araçlarıyla veriyi keşfet, anlamlı içgörüler çıkar ve bulgularını anlat.",
+    "color": "#3B8E79",
+    "order": 2,
+    "modules": [
+      {
+        "title": "Python ve veri okuryazarlığı",
+        "description": "Temel Python kavramlarını öğren ve veriyle çalışmaya hazırlan.",
+        "lessons": [
+          "YouTube içerik önerisi: Python'a başlangıç",
+          "Kurs yönlendirmesi: Python programlamaya giriş",
+          "Alıştırma: Liste, sözlük ve fonksiyonlarla küçük veri özeti"
+        ],
+        "project": "Açık bir CSV dosyasını okuyup temel istatistiklerini raporla."
+      },
+      {
+        "title": "Pandas ile veri hazırlama",
+        "description": "Tablosal veriyi temizle, dönüştür ve analiz için düzenle.",
+        "lessons": [
+          "YouTube içerik önerisi: Pandas DataFrame temelleri",
+          "Kurs yönlendirmesi: Veri temizleme ve keşifsel analiz",
+          "Alıştırma: Eksik değerleri ve yinelenen satırları incele"
+        ],
+        "project": "Dağınık bir satış veri setini analiz edilebilir hale getir."
+      },
+      {
+        "title": "Görselleştirme ve içgörü",
+        "description": "Bulgularını anlaşılır grafiklerle sun ve sonuçları yorumla.",
+        "lessons": [
+          "YouTube içerik önerisi: Matplotlib ile veri görselleştirme",
+          "Kurs yönlendirmesi: Veri hikâyeleştirme temelleri",
+          "Alıştırma: Bir iş sorusu için üç grafik seç"
+        ],
+        "project": "Veri setinden üç içgörü çıkarıp kısa bir analiz notu hazırla."
+      }
+    ]
+  },
+  {
+    "id": "product-ui-ux-designer",
+    "title": "Ürün UI/UX Tasarımcısı",
+    "track": "UI/UX Tasarım",
+    "level": "Başlangıç",
+    "duration": "10 hafta",
+    "summary": "Kullanıcı ihtiyacını araştırmadan prototipe taşı; tasarım kararlarını gerekçelendir.",
+    "color": "#A54CCB",
+    "order": 3,
+    "modules": [
+      {
+        "title": "Kullanıcıyı ve problemi anlama",
+        "description": "Araştırma soruları oluştur, görüşme yap ve bulguları sentezle.",
+        "lessons": [
+          "YouTube içerik önerisi: Kullanıcı araştırmasına giriş",
+          "Kurs yönlendirmesi: UX araştırma yöntemleri",
+          "Alıştırma: Tarafsız beş görüşme sorusu yaz"
+        ],
+        "project": "Bir günlük kullanım problemi için mini kullanıcı araştırması yap."
+      },
+      {
+        "title": "Akış ve wireframe",
+        "description": "Kullanıcı yolculuğunu, bilgi mimarisini ve temel ekranları kurgula.",
+        "lessons": [
+          "YouTube içerik önerisi: User flow ve wireframe",
+          "Kurs yönlendirmesi: Figma ile düşük ayrıntılı prototipleme",
+          "Alıştırma: Bir görevin ekran akışını çiz"
+        ],
+        "project": "Araştırma içgörülerinden hareketle üç ekranlık wireframe üret."
+      },
+      {
+        "title": "Görsel arayüz ve test",
+        "description": "Görsel hiyerarşi kur, prototipi test et ve iyileştirme kararlarını belgele.",
+        "lessons": [
+          "YouTube içerik önerisi: UI görsel hiyerarşi ve tipografi",
+          "Kurs yönlendirmesi: Figma prototipleme ve kullanılabilirlik testi",
+          "Alıştırma: Bir prototipi üç kişiyle test et"
+        ],
+        "project": "Tıklanabilir prototipini test et ve önce/sonra iyileştirmelerini sun."
+      }
+    ]
+  },
+  {
+    "id": "ux-researcher",
+    "title": "UX Araştırmacısı",
+    "track": "UI/UX Tasarım",
+    "level": "Başlangıç",
+    "duration": "8 hafta",
+    "summary": "Araştırma planı hazırla, nitel veriyi analiz et ve ürün ekipleri için eyleme dönük bulgular sun.",
+    "color": "#D05D87",
+    "order": 4,
+    "modules": [
+      {
+        "title": "Araştırma planı ve etik",
+        "description": "Araştırma hedefi, katılımcı profili ve yöntem seçimini tanımla.",
+        "lessons": [
+          "YouTube içerik önerisi: UX araştırma planı oluşturma",
+          "Kurs yönlendirmesi: Katılımcı görüşmeleri ve araştırma etiği",
+          "Alıştırma: Araştırma hedefi ve kapsam belgesi yaz"
+        ],
+        "project": "Bir dijital hizmet için kısa ve etik bir araştırma planı hazırla."
+      },
+      {
+        "title": "Görüşme ve sentez",
+        "description": "Görüşmeleri yürüt, notları kodla ve tekrar eden temaları belirle.",
+        "lessons": [
+          "YouTube içerik önerisi: Derinlemesine kullanıcı görüşmesi",
+          "Kurs yönlendirmesi: Nitel veri analizi ve affinity mapping",
+          "Alıştırma: Görüşme notlarından tema kümeleri çıkar"
+        ],
+        "project": "Üç görüşmeyi analiz ederek en az üç araştırma teması oluştur."
+      },
+      {
+        "title": "Bulguları paylaşma",
+        "description": "Araştırma bulgularını kanıt ve ürün önerileriyle anlaşılır biçimde sun.",
+        "lessons": [
+          "YouTube içerik önerisi: Araştırma bulgularını sunma",
+          "Kurs yönlendirmesi: İçgörü ve fırsat alanı tanımlama",
+          "Alıştırma: Bulgudan öneriye izlenebilir bir hikâye kur"
+        ],
+        "project": "Kanıt, içgörü ve önerileri içeren kısa bir araştırma sunumu hazırla."
+      }
+    ]
+  },
+  {
+    "id": "performance-marketing",
+    "title": "Performans Pazarlama Uzmanı",
+    "track": "Dijital Pazarlama",
+    "level": "Başlangıç",
+    "duration": "8 hafta",
+    "summary": "Kampanya hedeflerini belirle, ölçüm planı kur ve reklam sonuçlarını veriye göre yorumla.",
+    "color": "#DA7C2D",
+    "order": 5,
+    "modules": [
+      {
+        "title": "Pazarlama ve ölçüm temelleri",
+        "description": "Hedef kitleyi, dönüşüm hedefini ve temel performans metriklerini tanımla.",
+        "lessons": [
+          "YouTube içerik önerisi: Dijital pazarlama hunisi",
+          "Kurs yönlendirmesi: Google Analytics ve ölçüm temelleri",
+          "Alıştırma: Bir ürün için dönüşüm hedefi belirle"
+        ],
+        "project": "Küçük bir e-ticaret ürünü için ölçülebilir kampanya özeti yaz."
+      },
+      {
+        "title": "Kampanya kurgusu",
+        "description": "Arama ve sosyal reklamlar için mesaj, hedefleme ve bütçe yaklaşımı geliştir.",
+        "lessons": [
+          "YouTube içerik önerisi: Reklam kampanyası yapısı",
+          "Kurs yönlendirmesi: Arama reklamı ve anahtar kelime araştırması",
+          "Alıştırma: Reklam grupları ve mesaj varyasyonları tasarla"
+        ],
+        "project": "Varsayımsal lansman için kanal ve reklam metni taslağı hazırla."
+      },
+      {
+        "title": "Raporlama ve optimizasyon",
+        "description": "Sonuçları hedeflerle karşılaştır ve bir sonraki deneyi seç.",
+        "lessons": [
+          "YouTube içerik önerisi: Kampanya KPI'ları ve raporlama",
+          "Kurs yönlendirmesi: A/B testi ve optimizasyon",
+          "Alıştırma: Örnek sonuçlardan bir optimizasyon hipotezi kur"
+        ],
+        "project": "Örnek kampanya verisinden haftalık performans raporu oluştur."
+      }
+    ]
+  },
+  {
+    "id": "content-marketing",
+    "title": "İçerik Pazarlama Uzmanı",
+    "track": "Dijital Pazarlama",
+    "level": "Başlangıç",
+    "duration": "7 hafta",
+    "summary": "İçerik stratejisi oluştur, arama niyetine uygun içerikler üret ve etkisini takip et.",
+    "color": "#B27624",
+    "order": 6,
+    "modules": [
+      {
+        "title": "Kitle ve içerik stratejisi",
+        "description": "Hedef kitleyi, ihtiyaçlarını ve markanın içerik alanlarını tanımla.",
+        "lessons": [
+          "YouTube içerik önerisi: İçerik pazarlaması ve hedef kitle",
+          "Kurs yönlendirmesi: İçerik stratejisi oluşturma",
+          "Alıştırma: Üç içerik sütunu ve hedef kitlesini eşleştir"
+        ],
+        "project": "Bir marka için hedef kitle ve içerik stratejisi özeti hazırla."
+      },
+      {
+        "title": "SEO ve içerik üretimi",
+        "description": "Arama niyetini incele, içerik taslağı çıkar ve editoryal standart belirle.",
+        "lessons": [
+          "YouTube içerik önerisi: SEO ve arama niyeti",
+          "Kurs yönlendirmesi: SEO içerik yazarlığı",
+          "Alıştırma: Anahtar kelime kümesinden içerik brief'i oluştur"
+        ],
+        "project": "Arama niyetine uygun, başlıklandırılmış bir blog yazısı taslağı üret."
+      },
+      {
+        "title": "Dağıtım ve etki ölçümü",
+        "description": "İçeriği kanallara göre uyarlayıp performans hedeflerini takip et.",
+        "lessons": [
+          "YouTube içerik önerisi: İçerik dağıtım kanalları",
+          "Kurs yönlendirmesi: İçerik performansı ve analitik",
+          "Alıştırma: Bir içeriği üç kanal için yeniden kurgula"
+        ],
+        "project": "Dört haftalık yayın takvimi ve temel ölçüm tablosu hazırla."
+      }
+    ]
+  }
+]
