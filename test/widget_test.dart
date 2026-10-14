@@ -2,9 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:callifex/models/learning_path.dart';
+import 'package:callifex/main.dart';
 import 'package:callifex/widgets/path_card.dart';
 
 void main() {
+  testWidgets('açılış logosu iki saniye görünür ve yumuşakça kaybolur', (
+    tester,
+  ) async {
+    await tester.pumpWidget(const CallifexApp());
+    await tester.pump();
+
+    await tester.pump(const Duration(milliseconds: 1999));
+    expect(find.bySemanticsLabel('Callifex'), findsOneWidget);
+
+    await tester.pump(const Duration(milliseconds: 1));
+    await tester.pump(const Duration(milliseconds: 650));
+    expect(find.bySemanticsLabel('Callifex'), findsNothing);
+  });
+
   testWidgets('öğrenme yolu kartı bilgileri gösterir ve tıklanabilir', (
     tester,
   ) async {

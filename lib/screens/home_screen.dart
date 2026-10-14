@@ -205,8 +205,7 @@ class _EmptyPaths extends StatelessWidget {
         borderRadius: BorderRadius.circular(18),
       ),
       child: const Text(
-        'Henüz öğrenme yolu eklenmemiş. Firestore senaryolarını README’deki '
-        'adımlarla yükleyebilirsin.',
+        'Sana uygun öğrenme yolu bulunamadı. Daha sonra tekrar dene.',
       ),
     );
   }
