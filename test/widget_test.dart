@@ -12,7 +12,7 @@ void main() {
     await tester.pumpWidget(const CallifexApp());
     await tester.pump();
 
-    await tester.pump(const Duration(milliseconds: 1999));
+    await tester.pump(const Duration(milliseconds: 2999));
     expect(find.bySemanticsLabel('Callifex'), findsOneWidget);
 
     await tester.pump(const Duration(milliseconds: 1));

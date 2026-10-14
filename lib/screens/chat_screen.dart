@@ -1,4 +1,3 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import '../services/guide_chat_service.dart';
@@ -31,6 +30,7 @@ class _ChatScreenState extends State<ChatScreen> {
   void dispose() {
     _controller.dispose();
     _scrollController.dispose();
+    _service.dispose();
     super.dispose();
   }
 
@@ -53,9 +53,9 @@ class _ChatScreenState extends State<ChatScreen> {
       if (!mounted) return;
       setState(() => _messages.add((role: 'assistant', text: answer)));
       _scrollToEnd();
-    } on FirebaseException catch (error) {
+    } on GroqChatException catch (error) {
       if (!mounted) return;
-      setState(() => _error = 'Firebase yanıtı alınamadı: ${error.message}');
+      setState(() => _error = error.message);
     } on Exception catch (error) {
       if (!mounted) return;
       setState(() => _error = 'Rehber yanıt veremedi: $error');
@@ -78,7 +78,9 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final title = widget.pathTitle == null ? 'Akıllı Eğitim Asistanı' : 'Yol Rehberi';
+    final title = widget.pathTitle == null
+        ? 'Akıllı Eğitim Asistanı'
+        : 'Yol Rehberi';
     return Column(
       children: [
         Padding(

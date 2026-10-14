@@ -48,19 +48,22 @@ class _StartupScreen extends StatefulWidget {
 }
 
 class _StartupScreenState extends State<_StartupScreen> {
-  late final Future<FirebaseApp> _firebase;
+  late final Future<FirebaseApp> _firebase = _initializeFirebase();
   Timer? _splashTimer;
   bool _showApp = false;
 
   @override
   void initState() {
     super.initState();
-    _firebase = Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
     _splashTimer = Timer(const Duration(seconds: 3), () {
       if (mounted) setState(() => _showApp = true);
     });
+  }
+
+  Future<FirebaseApp> _initializeFirebase() async {
+    return Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
   }
 
   @override

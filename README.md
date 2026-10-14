@@ -1,8 +1,10 @@
 # Callifex demo
 
-Flutter ile hazırlanmış, önceden tanımlı altı kariyer öğrenme yolunu Firestore'dan
-gösteren ve Firebase AI Logic üzerinden Gemini rehber sohbeti sunan mobil demo.
-Öğrenme yolları yapay zekâ tarafından oluşturulmaz veya değiştirilmez.
+Önceden hazırlanmış altı kariyer öğrenme yolunu Firestore'dan gösteren Flutter
+demo uygulaması. Öğrenme yolları AI tarafından üretilmez veya değiştirilmez.
+Rehber sohbeti Groq'un REST API'sine Flutter uygulamasından doğrudan istek atar;
+sohbet geçmişi ekran açık kaldığı sürece uygulama belleğinde tutulur ve Firebase'e
+gönderilmez. Firestore yalnızca öğrenme yolları içindir.
 
 ## İçerik
 
@@ -10,62 +12,62 @@ gösteren ve Firebase AI Logic üzerinden Gemini rehber sohbeti sunan mobil demo
 - UI/UX Tasarım: Ürün UI/UX Tasarımcısı ve UX Araştırmacısı
 - Dijital Pazarlama: Performans Pazarlama Uzmanı ve İçerik Pazarlama Uzmanı
 - Her yol için adım adım modüller, içerik/kurs önerileri ve uygulama projeleri
-- Seçilen yola göre bağlam alan, Türkçe Gemini rehber sohbeti
-
-## Gereksinimler
-
-- Flutter SDK ve FlutterFire CLI
-- Firebase projesi
-- Node.js 20 veya üzeri; Firestore senaryolarını yüklemek için
-- Firebase projesi için Application Default Credentials veya servis hesabı
-- Firebase CLI (`firebase-tools`) ve seed işlemi için Google Cloud CLI (`gcloud`)
+- Seçilen yola göre bağlam alan Türkçe Groq rehber sohbeti
 
 ## Kurulum
 
-1. Android ve iOS platform klasörleri henüz oluşturulmadıysa proje kökünde
-   `flutter create --platforms=android,ios .` komutunu çalıştırın.
-2. Firebase Console'da proje oluşturun; iOS ve Android uygulamalarını ekleyin.
-3. Firebase CLI'ı `npm install -g firebase-tools` ile kurup `firebase login` ile
-   giriş yapın. FlutterFire CLI'ı `dart pub global activate flutterfire_cli` ile
-   kurun. Proje kökünde `flutterfire configure` komutunu çalıştırın. Üretilen
-   `lib/firebase_options.dart` dosyası uygulama başlangıcında kullanılır.
-4. Firestore Database'i oluşturun ve
-   `firebase deploy --project proje-kimliginiz --only firestore:rules` komutuyla
-   `firestore.rules` dosyasını yayımlayın. Öğrenme yolları herkese açık okunur;
-   istemci tarafından yazılamaz.
-5. Firebase Console'daki AI Logic bölümünden Gemini Developer API sağlayıcısını
-   etkinleştirin. Gemini API anahtarını uygulama koduna alıp elle yazmayın:
-   Firebase AI Logic, sağlayıcıyı etkinleştirirken Firebase projesini ve
-   SDK'nın kullanacağı anahtarı yönetir. `flutterfire configure` ile üretilen
-   `lib/firebase_options.dart` uygulamanın Firebase yapılandırmasını sağlar;
-   `guide_chat_service.dart` içine ayrıca bir Gemini anahtarı eklenmez.
-   Kullanılan model adı `gemini-3.7-flash` olup [Firebase AI Logic model
-   listesinde](https://firebase.google.com/docs/ai-logic/models) desteklenir.
-6. Senaryoları güvenli biçimde yüklemek için Firebase Admin SDK kimlik
-   doğrulaması gereken bir terminalde:
+1. Firebase Console'daki mevcut Android/iOS uygulamalarınızı ve
+   `lib/firebase_options.dart` yapılandırmanızı kullanın. Firestore öğrenme
+   yolları için Firebase yapılandırması eskisi gibi gereklidir.
+2. Groq API anahtarı için [Groq Console API Keys](https://console.groq.com/keys)
+   sayfasından bir key oluşturun.
+3. Proje kökünde `.env.example` dosyasını `.env` olarak kopyalayın ve
+   `GROQ_API_KEY` değerini kendi anahtarınızla değiştirin. Dosya, Flutter'ın
+   `--dart-define-from-file` seçeneği için JSON biçimindedir:
 
    ```sh
-   # Google Cloud CLI kurulu olmalı: https://cloud.google.com/sdk/docs/install
-   gcloud auth application-default login
-   cd tools
-   npm install
-   npm run seed
+   cp .env.example .env
    ```
 
-   `firebase login` yalnızca Firebase CLI'ı yetkilendirir; Admin SDK'nın
-   Firestore'a yazabilmesi için tek başına yeterli değildir. `gcloud` komutu
-   bulunmuyorsa önce Google Cloud CLI'ı kurun. Alternatif olarak servis hesabı
-   kimlik bilgileri kullanıp dosyanın yolunu `GOOGLE_APPLICATION_CREDENTIALS`
-   olarak ayarlayın.
-   Seeder proje kimliğini `firebase.json` içindeki FlutterFire ayarından okur.
-   İsterseniz `FIREBASE_PROJECT_ID` ile üzerine yazabilirsiniz. Servis hesabı
-   kullanıyorsanız anahtar dosyasını repoya koymayın; yolunu
-   `GOOGLE_APPLICATION_CREDENTIALS` ortam değişkeniyle verin. Seed komutu
-   `learningPaths` koleksiyonundaki aynı kimlikli altı belgeyi günceller.
-7. Proje kökünde `flutter pub get` ve `flutter run` çalıştırın.
+   Önceki Firebase Functions kurulumunda anahtarı `functions/.env` içine
+   kaydettiyseniz, o dosyadaki key değerini yerel `.env` dosyasındaki
+   `GROQ_API_KEY` alanına taşıyın. Uygulama artık `functions/.env` dosyasını
+   okumaz; bu dosyayı anahtarı taşıdığınızı doğrulayana kadar silmeyin.
 
-Gerçek kullanıcılara açmadan önce Firebase App Check'i yapılandırıp Gemini
-kullanımını Firebase Console'dan izleyin.
+4. Bağımlılıkları yükleyip uygulamayı `.env` dosyasıyla başlatın:
+
+   ```sh
+   flutter pub get
+   flutter run --dart-define-from-file=.env
+   ```
+
+   `.env` Git tarafından yok sayılır. Uygulamayı başka yolla başlatırsanız,
+   sohbet servisi Groq anahtarının eksik olduğunu açıkça bildirir.
+5. Üretim build'inde de aynı key'i `--dart-define-from-file` ile vermeniz gerekir.
+   **Önemli:** Doğrudan mobil istemciden Groq'a giden API key, `.env` Git'te
+   tutulsa bile derlenmiş uygulamadan çıkarılabilir. Bu yöntem demo/kişisel test
+   içindir; herkese dağıtılan üretim uygulamasında anahtarı korumaz ve kullanım
+   limitlerini istismar riskinden korumaz.
+
+### Firestore'daki öğrenme yolları
+
+Firestore kullanımı chatbot'tan bağımsız olarak devam eder. `assets/data/learning_paths.json`
+dosyasındaki altı sabit yolu Firestore'a yüklemek için Google Cloud CLI ve
+Application Default Credentials gerekir:
+
+```sh
+gcloud auth application-default login
+cd tools
+npm install
+npm run seed
+```
+
+Bu işlem `learningPaths` koleksiyonundaki belgeleri günceller. Firestore
+kurallarını yayımlamak için proje kökünde:
+
+```sh
+firebase deploy --project callifex-38e38 --only firestore:rules
+```
 
 ## Firestore veri modeli
 
@@ -82,18 +84,12 @@ learningPaths/{id}
   summary: string
   color: string (#RRGGBB)
   order: number
-  modules: [
-    {
-      title: string,
-      description: string,
-      lessons: string[],
-      project: string
-    }
-  ]
+  modules: [{ title, description, lessons: string[], project }]
 ```
 
-## Doğrulama
+## Testler
 
-Firebase yapılandırmasını tamamladıktan sonra `flutter analyze` ve
-`flutter test` komutlarını çalıştırın. Testler örnek veri sayısını, kategori
-dağılımını ve model doğrulamasını kontrol eder.
+```sh
+flutter analyze
+flutter test
+```

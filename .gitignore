@@ -5,6 +5,9 @@
 .pub-cache/
 build/
 coverage/
+.env
+functions/.env
+functions/.env.*
 tools/node_modules/
 **/service-account*.json
 **/*firebase-adminsdk*.json
