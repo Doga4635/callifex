@@ -95,17 +95,10 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
                 const SizedBox(width: 4),
               ],
-              Container(
-                width: 44,
-                height: 44,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFE4E9FF),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: const Icon(
-                  Icons.auto_awesome_rounded,
-                  color: Color(0xFF335CFF),
-                ),
+              Image.asset(
+                'assets/data/images/Logo.png',
+                width: 64,
+                height: 64,
               ),
               const SizedBox(width: 12),
               Expanded(

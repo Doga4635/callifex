@@ -150,7 +150,7 @@ class _IntroCard extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF34466F),
+                    color: const Color(0xFF0F172A),
                     borderRadius: BorderRadius.circular(30),
                   ),
                   child: const Text(
@@ -184,7 +184,7 @@ class _IntroCard extends StatelessWidget {
           const SizedBox(width: 8),
           const Icon(
             Icons.rocket_launch_rounded,
-            color: Color(0xFFB5F36D),
+            color: Color(0xFF7CE36B),
             size: 52,
           ),
         ],

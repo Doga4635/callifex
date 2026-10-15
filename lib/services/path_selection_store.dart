@@ -65,4 +65,22 @@ class PathSelectionStore extends ChangeNotifier {
     notifyListeners();
     return AddPathResult.added;
   }
+
+  Future<void> removePath(String pathId) async {
+    if (!_isLoaded) await load();
+    if (!_selectedIds.contains(pathId)) return;
+
+    final nextIds = {..._selectedIds}..remove(pathId);
+    final preferences = await _preferencesLoader();
+    final saved = await preferences.setStringList(
+      _storageKey,
+      nextIds.toList(growable: false),
+    );
+    if (!saved) {
+      throw StateError('Öğrenme yolu bu cihazdan kaldırılamadı.');
+    }
+
+    _selectedIds = nextIds;
+    notifyListeners();
+  }
 }

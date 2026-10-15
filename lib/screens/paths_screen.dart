@@ -71,14 +71,31 @@ class PathsScreen extends StatelessWidget {
                               ...selectedPaths.map(
                                 (path) => Padding(
                                   padding: const EdgeInsets.only(bottom: 12),
-                                  child: PathCard(
-                                    path: path,
-                                    onTap: () => Navigator.of(context).push(
-                                      MaterialPageRoute<void>(
-                                        builder: (_) =>
-                                            PathDetailScreen(path: path),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: PathCard(
+                                          path: path,
+                                          onTap: () =>
+                                              Navigator.of(context).push(
+                                                MaterialPageRoute<void>(
+                                                  builder: (_) =>
+                                                      PathDetailScreen(
+                                                        path: path,
+                                                      ),
+                                                ),
+                                              ),
+                                        ),
                                       ),
-                                    ),
+                                      IconButton(
+                                        tooltip: 'Yolu listemden kaldır',
+                                        onPressed: () =>
+                                            _removePath(context, path),
+                                        icon: const Icon(
+                                          Icons.delete_outline_rounded,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
@@ -116,6 +133,21 @@ class PathsScreen extends StatelessWidget {
         );
       },
     );
+  }
+
+  Future<void> _removePath(BuildContext context, LearningPath path) async {
+    try {
+      await selectionStore.removePath(path.id);
+      if (!context.mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Öğrenme yolu listenden kaldırıldı.')),
+      );
+    } on Exception catch (error) {
+      if (!context.mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Yol listeden kaldırılamadı: $error')),
+      );
+    }
   }
 
   Future<void> _addPath(

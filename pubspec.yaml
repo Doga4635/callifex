@@ -26,3 +26,4 @@ flutter:
   assets:
     - assets/data/learning_paths.json
     - assets/data/images/main-logo.svg
+    - assets/data/images/Logo.png

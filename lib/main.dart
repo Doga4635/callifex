@@ -24,7 +24,7 @@ class CallifexApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: const Color(0xFFF7F7F2),
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF335CFF),
+          seedColor: const Color(0xFF6366F1),
           brightness: Brightness.light,
           surface: const Color(0xFFF7F7F2),
         ),

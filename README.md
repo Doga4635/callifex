@@ -74,7 +74,9 @@ firebase deploy --project callifex-38e38 --only firestore:rules
 Kullanıcının seçtiği yollar Firebase'e yazılmaz; seçilen yol kimlikleri cihazda
 `SharedPreferences` ile saklanır. Bu yüzden uygulama ilk açıldığında kişisel yol
 listesi boştur, eklenen yollar ana sayfa ve “Yollarım” ekranında görünür ve aynı
-cihazdaki sonraki açılışlarda korunur. Yol ekleme formu Firestore kataloğundaki
+cihazdaki sonraki açılışlarda korunur. “Yollarım” ekranındaki silme düğmesi
+seçilen yolu yalnızca bu cihazın listesinden kaldırır; Firestore kataloğu
+değişmez. Yol ekleme formu Firestore kataloğundaki
 sektör, zorluk ve toplam süre seçeneklerini kullanır; üç alanın tam eşleşmesi
 aranır. Eşleşme bulunamazsa kullanıcıya bildirim gösterilir. Mevcut örnek
 süreler 7, 8, 10 ve 12 haftadır.

@@ -23,6 +23,24 @@ void main() {
     store.dispose();
   });
 
+  test('yolu listeden kaldırır ve cihaz ayarlarına kaydeder', () async {
+    SharedPreferences.setMockInitialValues({
+      'selectedLearningPathIds': ['frontend-developer', 'another-path'],
+    });
+    final store = PathSelectionStore();
+    await store.load();
+
+    await store.removePath('frontend-developer');
+
+    expect(store.contains('frontend-developer'), isFalse);
+    expect(store.contains('another-path'), isTrue);
+    final preferences = await SharedPreferences.getInstance();
+    expect(preferences.getStringList('selectedLearningPathIds'), [
+      'another-path',
+    ]);
+    store.dispose();
+  });
+
   testWidgets('cihazda seçilmiş yol ana sayfada listelenir', (tester) async {
     SharedPreferences.setMockInitialValues({
       'selectedLearningPathIds': ['frontend-developer'],
@@ -75,6 +93,37 @@ void main() {
     expect(find.text('Sektör'), findsOneWidget);
     expect(find.text('Zorluk'), findsOneWidget);
     expect(find.text('Ayırabileceğin toplam süre'), findsOneWidget);
+    store.dispose();
+  });
+
+  testWidgets('silme butonu yolu Yollarım listesinden kaldırır', (
+    tester,
+  ) async {
+    SharedPreferences.setMockInitialValues({
+      'selectedLearningPathIds': ['frontend-developer'],
+    });
+    final store = PathSelectionStore();
+    await store.load();
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: PathsScreen(
+            paths: Stream.value([_samplePath]),
+            selectionStore: store,
+          ),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Frontend Geliştirici'), findsOneWidget);
+    await tester.tap(find.byTooltip('Yolu listemden kaldır'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Frontend Geliştirici'), findsNothing);
+    expect(find.text('Listelenecek yol bulunmamaktadır.'), findsOneWidget);
+    expect(find.text('Öğrenme yolu listenden kaldırıldı.'), findsOneWidget);
     store.dispose();
   });
 }
