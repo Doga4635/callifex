@@ -17,16 +17,8 @@ if (!projectId) {
 
 const sourceUrl = new URL('../assets/data/learning_paths.json', import.meta.url);
 const scenarios = JSON.parse(await readFile(sourceUrl, 'utf8'));
-if (!Array.isArray(scenarios) || scenarios.length !== 6) {
-  throw new Error('Seed dosyasında tam olarak 6 öğrenme yolu bulunmalı.');
-}
-
-const expectedTracks = ['Yazılım', 'UI/UX Tasarım', 'Dijital Pazarlama'];
-for (const track of expectedTracks) {
-  const count = scenarios.filter((scenario) => scenario.track === track).length;
-  if (count !== 2) {
-    throw new Error(`"${track}" için 2 senaryo bekleniyordu; bulunan: ${count}.`);
-  }
+if (!Array.isArray(scenarios) || scenarios.length === 0) {
+  throw new Error('Seed dosyasında en az bir öğrenme yolu bulunmalı.');
 }
 
 const ids = scenarios.map((scenario) => scenario.id);
@@ -49,4 +41,4 @@ for (const { id, ...scenario } of scenarios) {
 }
 
 await batch.commit();
-console.log('Firestore için 6 öğrenme yolu yüklendi.');
+console.log(`Firestore için ${scenarios.length} öğrenme yolu yüklendi.`);

@@ -22,4 +22,22 @@ class LearningPathRepository {
               .toList(growable: false),
         );
   }
+
+  Future<LearningPath?> findPath({
+    required String track,
+    required String level,
+    required String duration,
+  }) async {
+    final snapshot = await _firestore
+        .collection('learningPaths')
+        .where('track', isEqualTo: track)
+        .where('level', isEqualTo: level)
+        .where('duration', isEqualTo: duration)
+        .limit(1)
+        .get();
+
+    if (snapshot.docs.isEmpty) return null;
+    final document = snapshot.docs.first;
+    return LearningPath.fromMap(document.id, document.data());
+  }
 }

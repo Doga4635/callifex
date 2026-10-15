@@ -1,6 +1,6 @@
 # Callifex demo
 
-Önceden hazırlanmış altı kariyer öğrenme yolunu Firestore'dan gösteren Flutter
+Önceden hazırlanmış 12 kariyer öğrenme yolunu Firestore'dan gösteren Flutter
 demo uygulaması. Öğrenme yolları AI tarafından üretilmez veya değiştirilmez.
 Rehber sohbeti Groq'un REST API'sine Flutter uygulamasından doğrudan istek atar;
 sohbet geçmişi ekran açık kaldığı sürece uygulama belleğinde tutulur ve Firebase'e
@@ -8,9 +8,9 @@ gönderilmez. Firestore yalnızca öğrenme yolları içindir.
 
 ## İçerik
 
-- Yazılım: Frontend Geliştirici ve Python ile Veri Analizi
-- UI/UX Tasarım: Ürün UI/UX Tasarımcısı ve UX Araştırmacısı
-- Dijital Pazarlama: Performans Pazarlama Uzmanı ve İçerik Pazarlama Uzmanı
+- Yazılım: Backend, mobil uygulama, siber güvenlik ve oyun geliştirme
+- UI/UX Tasarım: Tasarım sistemleri, motion tasarım, UX yazarlığı ve design thinking
+- Dijital Pazarlama: SEO, sosyal medya, growth hacking ve e-posta pazarlaması
 - Her yol için adım adım modüller, içerik/kurs önerileri ve uygulama projeleri
 - Seçilen yola göre bağlam alan Türkçe Groq rehber sohbeti
 
@@ -52,7 +52,7 @@ gönderilmez. Firestore yalnızca öğrenme yolları içindir.
 ### Firestore'daki öğrenme yolları
 
 Firestore kullanımı chatbot'tan bağımsız olarak devam eder. `assets/data/learning_paths.json`
-dosyasındaki altı sabit yolu Firestore'a yüklemek için Google Cloud CLI ve
+dosyasındaki yolları Firestore'a yüklemek için Google Cloud CLI ve
 Application Default Credentials gerekir:
 
 ```sh
@@ -62,16 +62,26 @@ npm install
 npm run seed
 ```
 
-Bu işlem `learningPaths` koleksiyonundaki belgeleri günceller. Firestore
+Bu işlem JSON'daki her yolu `id` alanını belge kimliği olarak kullanarak
+`learningPaths` koleksiyonuna yazar veya aynı kimlikteki belgeyi günceller.
+JSON'dan kaldırılan belgeler Firestore'dan silinmez. Firestore
 kurallarını yayımlamak için proje kökünde:
 
 ```sh
 firebase deploy --project callifex-38e38 --only firestore:rules
 ```
 
+Kullanıcının seçtiği yollar Firebase'e yazılmaz; seçilen yol kimlikleri cihazda
+`SharedPreferences` ile saklanır. Bu yüzden uygulama ilk açıldığında kişisel yol
+listesi boştur, eklenen yollar ana sayfa ve “Yollarım” ekranında görünür ve aynı
+cihazdaki sonraki açılışlarda korunur. Yol ekleme formu Firestore kataloğundaki
+sektör, zorluk ve toplam süre seçeneklerini kullanır; üç alanın tam eşleşmesi
+aranır. Eşleşme bulunamazsa kullanıcıya bildirim gösterilir. Mevcut örnek
+süreler 7, 8, 10 ve 12 haftadır.
+
 ## Firestore veri modeli
 
-`assets/data/learning_paths.json`, altı başlangıç belgesinin kaynağıdır. Seeder
+`assets/data/learning_paths.json`, başlangıç belgelerinin kaynağıdır. Seeder
 bu dosyadaki `id` alanını Firestore belge kimliği olarak kullanır; uygulamanın
 Firestore'dan beklediği alanlar:
 

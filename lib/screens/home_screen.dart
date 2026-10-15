@@ -1,22 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../models/learning_path.dart';
-import '../services/learning_path_repository.dart';
+import '../services/path_selection_store.dart';
 import '../widgets/path_card.dart';
 import 'path_detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({required this.onBrowsePaths, super.key});
+  const HomeScreen({
+    required this.paths,
+    required this.selectionStore,
+    required this.onBrowsePaths,
+    super.key,
+  });
 
+  final Stream<List<LearningPath>> paths;
+  final PathSelectionStore selectionStore;
   final VoidCallback onBrowsePaths;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return StreamBuilder<List<LearningPath>>(
-      stream: LearningPathRepository().watchPaths(),
+      stream: paths,
       builder: (context, snapshot) {
-        return CustomScrollView(
+        return AnimatedBuilder(
+          animation: selectionStore,
+          builder: (context, _) {
+            final selectedPaths = snapshot.data
+                    ?.where((path) => selectionStore.contains(path.id))
+                    .toList(growable: false) ??
+                const <LearningPath>[];
+            return CustomScrollView(
           slivers: [
             SliverPadding(
               padding: const EdgeInsets.fromLTRB(22, 18, 22, 28),
@@ -82,10 +96,15 @@ class HomeScreen extends StatelessWidget {
                       padding: EdgeInsets.symmetric(vertical: 26),
                       child: Center(child: CircularProgressIndicator()),
                     )
-                  else if (snapshot.data!.isEmpty)
+                  else if (!selectionStore.isLoaded)
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 26),
+                      child: Center(child: CircularProgressIndicator()),
+                    )
+                  else if (selectedPaths.isEmpty)
                     const _EmptyPaths()
                   else
-                    ...snapshot.data!.take(3).map(
+                    ...selectedPaths.take(3).map(
                           (path) => Padding(
                             padding: const EdgeInsets.only(bottom: 12),
                             child: PathCard(
@@ -102,6 +121,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ],
+        );
+          },
         );
       },
     );
@@ -205,7 +226,8 @@ class _EmptyPaths extends StatelessWidget {
         borderRadius: BorderRadius.circular(18),
       ),
       child: const Text(
-        'Sana uygun öğrenme yolu bulunamadı. Daha sonra tekrar dene.',
+        'Listelenecek yol bulunmamaktadır. Sana uygun bir yol eklemek için '
+        '“Yollarım” sekmesine göz at.',
       ),
     );
   }

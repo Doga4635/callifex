@@ -1,253 +1,565 @@
 [
   {
-    "id": "frontend-developer",
-    "title": "Frontend Geliştirici",
-    "track": "Yazılım",
-    "level": "Başlangıç",
-    "duration": "12 hafta",
-    "summary": "Web'in temelinden etkileşimli arayüzlere ilerle; portföyüne koyabileceğin üç küçük proje üret.",
-    "color": "#335CFF",
-    "order": 1,
-    "modules": [
-      {
-        "title": "Web temelleri",
-        "description": "Tarayıcının nasıl çalıştığını ve erişilebilir sayfa yapısını öğren.",
-        "lessons": [
-          "YouTube içerik önerisi: HTML ve web'in çalışma mantığı",
-          "Kurs yönlendirmesi: HTML5 ve CSS3'e giriş",
-          "Alıştırma: Semantik etiketlerle kişisel tanıtım sayfası"
-        ],
-        "project": "Erişilebilir bir kişisel tanıtım sayfası tasarla ve yayımla."
-      },
-      {
-        "title": "CSS ve responsive tasarım",
-        "description": "Düzen, tipografi, renk ve farklı ekran boyutlarına uyum üzerinde çalış.",
-        "lessons": [
-          "YouTube içerik önerisi: Flexbox ve CSS Grid",
-          "Kurs yönlendirmesi: Responsive web tasarımı",
-          "Alıştırma: Mobil ve masaüstü için ürün kartı"
-        ],
-        "project": "Bir ürün tanıtım sayfasını mobil öncelikli yaklaşımla kodla."
-      },
-      {
-        "title": "JavaScript ve arayüz etkileşimi",
-        "description": "Değişkenler, fonksiyonlar, DOM ve olaylarla sayfana davranış kazandır.",
-        "lessons": [
-          "YouTube içerik önerisi: JavaScript temelleri ve DOM",
-          "Kurs yönlendirmesi: JavaScript ile etkileşimli web",
-          "Alıştırma: Form doğrulama ve filtrelenebilir liste"
-        ],
-        "project": "Aranabilir ve filtrelenebilir bir etkinlik keşif arayüzü geliştir."
-      }
-    ]
-  },
-  {
-    "id": "python-data-analysis",
-    "title": "Python ile Veri Analizi",
+    "id": "backend-developer",
+    "title": "Backend Geliştirici",
     "track": "Yazılım",
     "level": "Orta",
-    "duration": "10 hafta",
-    "summary": "Python ve temel analiz araçlarıyla veriyi keşfet, anlamlı içgörüler çıkar ve bulgularını anlat.",
-    "color": "#3B8E79",
-    "order": 2,
+    "duration": "14 hafta",
+    "summary": "Sunucu tarafı mantığını, veritabanı yönetimini ve RESTful API mimarisini güvenli bir şekilde inşa et.",
+    "color": "#2A4365",
+    "order": 7,
     "modules": [
       {
-        "title": "Python ve veri okuryazarlığı",
-        "description": "Temel Python kavramlarını öğren ve veriyle çalışmaya hazırlan.",
+        "title": "Node.js ve Express.js temelleri",
+        "description": "JavaScript ile sunucu ortamı kurma ve yönlendirme yönetimi.",
         "lessons": [
-          "YouTube içerik önerisi: Python'a başlangıç",
-          "Kurs yönlendirmesi: Python programlamaya giriş",
-          "Alıştırma: Liste, sözlük ve fonksiyonlarla küçük veri özeti"
+          "YouTube içerik önerisi: Node.js ile sunucu ayağa kaldırma",
+          "Kurs yönlendirmesi: Express.js ile API geliştirme",
+          "Alıştırma: Temel GET ve POST uç noktaları yazma"
         ],
-        "project": "Açık bir CSV dosyasını okuyup temel istatistiklerini raporla."
+        "project": "Basit bir yapılacaklar listesi (To-Do) API'si oluştur."
       },
       {
-        "title": "Pandas ile veri hazırlama",
-        "description": "Tablosal veriyi temizle, dönüştür ve analiz için düzenle.",
+        "title": "Veritabanı ve ODM entegrasyonu",
+        "description": "MongoDB veya PostgreSQL ile veri modelleme ve CRUD operasyonları.",
         "lessons": [
-          "YouTube içerik önerisi: Pandas DataFrame temelleri",
-          "Kurs yönlendirmesi: Veri temizleme ve keşifsel analiz",
-          "Alıştırma: Eksik değerleri ve yinelenen satırları incele"
+          "YouTube içerik önerisi: NoSQL vs SQL veri tabanları",
+          "Kurs yönlendirmesi: Mongoose ve MongoDB temelleri",
+          "Alıştırma: Kullanıcı şeması oluşturma ve veri ekleme"
         ],
-        "project": "Dağınık bir satış veri setini analiz edilebilir hale getir."
+        "project": "Bir e-ticaret uygulaması için ürün veritabanı şeması tasarla."
       },
       {
-        "title": "Görselleştirme ve içgörü",
-        "description": "Bulgularını anlaşılır grafiklerle sun ve sonuçları yorumla.",
+        "title": "Kimlik doğrulama ve güvenlik",
+        "description": "JWT tabanlı kimlik doğrulama, şifreleme ve güvenlik önlemleri.",
         "lessons": [
-          "YouTube içerik önerisi: Matplotlib ile veri görselleştirme",
-          "Kurs yönlendirmesi: Veri hikâyeleştirme temelleri",
-          "Alıştırma: Bir iş sorusu için üç grafik seç"
+          "YouTube içerik önerisi: JWT ile yetkilendirme mantığı",
+          "Kurs yönlendirmesi: Güvenli API tasarımı",
+          "Alıştırma: Middleware yazarak route koruma"
         ],
-        "project": "Veri setinden üç içgörü çıkarıp kısa bir analiz notu hazırla."
+        "project": "Kayıt ol ve giriş yap özelliklerine sahip güvenli bir kimlik doğrulama servisi yaz."
+      },
+      {
+        "title": "Dağıtım ve test",
+        "description": "Yazılan API'yi buluta yükleme ve temel test senaryoları yazma.",
+        "lessons": [
+          "YouTube içerik önerisi: Render veya Railway ile API yayına alma",
+          "Kurs yönlendirmesi: Postman ile API testi",
+          "Alıştırma: Otomatik test senaryoları oluşturma"
+        ],
+        "project": "Geliştirdiğin API'yi canlıya al ve test raporunu sun."
       }
     ]
   },
   {
-    "id": "product-ui-ux-designer",
-    "title": "Ürün UI/UX Tasarımcısı",
-    "track": "UI/UX Tasarım",
-    "level": "Başlangıç",
-    "duration": "10 hafta",
-    "summary": "Kullanıcı ihtiyacını araştırmadan prototipe taşı; tasarım kararlarını gerekçelendir.",
-    "color": "#A54CCB",
-    "order": 3,
+    "id": "mobile-app-developer",
+    "title": "Mobil Uygulama Geliştirici",
+    "track": "Yazılım",
+    "level": "Zor",
+    "duration": "16 hafta",
+    "summary": "Flutter ile hem iOS hem Android için yüksek performanslı ve modern arayüzlü mobil uygulamalar geliştir.",
+    "color": "#0284C7",
+    "order": 8,
     "modules": [
       {
-        "title": "Kullanıcıyı ve problemi anlama",
-        "description": "Araştırma soruları oluştur, görüşme yap ve bulguları sentezle.",
+        "title": "Dart dili ve Flutter temelleri",
+        "description": "Dart programlama dilinin temelleri ve temel widget yapıları.",
         "lessons": [
-          "YouTube içerik önerisi: Kullanıcı araştırmasına giriş",
-          "Kurs yönlendirmesi: UX araştırma yöntemleri",
-          "Alıştırma: Tarafsız beş görüşme sorusu yaz"
+          "YouTube içerik önerisi: Dart programlama dili sıfırdan eğitim",
+          "Kurs yönlendirmesi: Flutter ile cross-platform geliştirme",
+          "Alıştırma: Stateless ve Stateful widget kullanımı"
         ],
-        "project": "Bir günlük kullanım problemi için mini kullanıcı araştırması yap."
+        "project": "Hesap makinesi veya sayaç uygulaması tasarla."
       },
       {
-        "title": "Akış ve wireframe",
-        "description": "Kullanıcı yolculuğunu, bilgi mimarisini ve temel ekranları kurgula.",
+        "title": "Durum yönetimi ve navigasyon",
+        "description": "Provider veya Bloc ile state yönetimi ve sayfalar arası geçişler.",
         "lessons": [
-          "YouTube içerik önerisi: User flow ve wireframe",
-          "Kurs yönlendirmesi: Figma ile düşük ayrıntılı prototipleme",
-          "Alıştırma: Bir görevin ekran akışını çiz"
+          "YouTube içerik önerisi: Flutter Provider paketi kullanımı",
+          "Kurs yönlendirmesi: İleri düzey navigasyon yönetimi",
+          "Alıştırma: Dinamik sepet yapısı kurma"
         ],
-        "project": "Araştırma içgörülerinden hareketle üç ekranlık wireframe üret."
+        "project": "Çok sayfalı ve sepet özellikli bir alışveriş arayüzü yap."
       },
       {
-        "title": "Görsel arayüz ve test",
-        "description": "Görsel hiyerarşi kur, prototipi test et ve iyileştirme kararlarını belgele.",
+        "title": "API entegrasyonu ve yerel depolama",
+        "description": "HTTP istekleri atma, JSON parse etme ve yerel veritabanı kullanımı.",
         "lessons": [
-          "YouTube içerik önerisi: UI görsel hiyerarşi ve tipografi",
-          "Kurs yönlendirmesi: Figma prototipleme ve kullanılabilirlik testi",
-          "Alıştırma: Bir prototipi üç kişiyle test et"
+          "YouTube içerik önerisi: Flutter ile REST API tüketimi",
+          "Kurs yönlendirmesi: SharedPreferences ve Hive kullanımı",
+          "Alıştırma: Hava durumu verilerini çekme ve gösterme"
         ],
-        "project": "Tıklanabilir prototipini test et ve önce/sonra iyileştirmelerini sun."
+        "project": "Harici bir API'den veri çeken hava durumu uygulaması geliştir."
+      },
+      {
+        "title": "Uygulama yayına hazırlık",
+        "description": "Uygulama ikonları, imzalama süreçleri ve mağaza optimizasyonu.",
+        "lessons": [
+          "YouTube içerik önerisi: Google Play ve App Store yayınlama süreci",
+          "Kurs yönlendirmesi: Performans optimizasyonu",
+          "Alıştırma: Hata ayıklama ve profil çıkarma"
+        ],
+        "project": "Uygulamanın APK sürümünü derle ve temel performans testlerini tamamla."
       }
     ]
   },
   {
-    "id": "ux-researcher",
-    "title": "UX Araştırmacısı",
+    "id": "design-systems",
+    "title": "Tasarım Sistemleri Uzmanı",
     "track": "UI/UX Tasarım",
     "level": "Zor",
-    "duration": "8 hafta",
-    "summary": "Araştırma planı hazırla, nitel veriyi analiz et ve ürün ekipleri için eyleme dönük bulgular sun.",
-    "color": "#D05D87",
-    "order": 4,
+    "duration": "12 hafta",
+    "summary": "Ölçeklenebilir arayüzler için tutarlı tasarım dilleri, token'lar ve bileşen kütüphaneleri oluştur.",
+    "color": "#7C3AED",
+    "order": 9,
     "modules": [
       {
-        "title": "Araştırma planı ve etik",
-        "description": "Araştırma hedefi, katılımcı profili ve yöntem seçimini tanımla.",
+        "title": "Tasarım token'ları ve temeller",
+        "description": "Renk paletleri, tipografi hiyerarşisi ve boşluk sistemlerinin belirlenmesi.",
         "lessons": [
-          "YouTube içerik önerisi: UX araştırma planı oluşturma",
-          "Kurs yönlendirmesi: Katılımcı görüşmeleri ve araştırma etiği",
-          "Alıştırma: Araştırma hedefi ve kapsam belgesi yaz"
+          "YouTube içerik önerisi: Figma variables ve tokens mantığı",
+          "Kurs yönlendirmesi: Tasarım sistemi temelleri",
+          "Alıştırma: Ölçeklenebilir renk ve tipografi token'ı oluşturma"
         ],
-        "project": "Bir dijital hizmet için kısa ve etik bir araştırma planı hazırla."
+        "project": "Marka için temel tasarım token kılavuzu hazırla."
       },
       {
-        "title": "Görüşme ve sentez",
-        "description": "Görüşmeleri yürüt, notları kodla ve tekrar eden temaları belirle.",
+        "title": "Atomik tasarım ve bileşenler",
+        "description": "Atom, molekül ve organizma yapısıyla bileşen kütüphanesi kurma.",
         "lessons": [
-          "YouTube içerik önerisi: Derinlemesine kullanıcı görüşmesi",
-          "Kurs yönlendirmesi: Nitel veri analizi ve affinity mapping",
-          "Alıştırma: Görüşme notlarından tema kümeleri çıkar"
+          "YouTube içerik önerisi: Atomic Design metodolojisi",
+          "Kurs yönlendirmesi: Figma'da ileri düzey component yapıları",
+          "Alıştırma: Buton ve form elemanları varyantları üretme"
         ],
-        "project": "Üç görüşmeyi analiz ederek en az üç araştırma teması oluştur."
+        "project": "Yeniden kullanılabilir 10 temel bileşenlik kütüphane tasarla."
       },
       {
-        "title": "Bulguları paylaşma",
-        "description": "Araştırma bulgularını kanıt ve ürün önerileriyle anlaşılır biçimde sun.",
+        "title": "Dokümantasyon ve erişilebilirlik",
+        "description": "Bileşenlerin kullanım kuralları ve WCAG erişilebilirlik standartları.",
         "lessons": [
-          "YouTube içerik önerisi: Araştırma bulgularını sunma",
-          "Kurs yönlendirmesi: İçgörü ve fırsat alanı tanımlama",
-          "Alıştırma: Bulgudan öneriye izlenebilir bir hikâye kur"
+          "YouTube içerik önerisi: Tasarım sistemlerinde dokümantasyon",
+          "Kurs yönlendirmesi: Erişilebilir UI tasarım standartları",
+          "Alıştırma: Kontrast ve klavye navigasyon testi"
         ],
-        "project": "Kanıt, içgörü ve önerileri içeren kısa bir araştırma sunumu hazırla."
+        "project": "Bileşenlerin nasıl kullanılacağını anlatan mini bir rehber doküman hazırla."
+      },
+      {
+        "title": "Yazılım ekibiyle uyum",
+        "description": "Geliştiricilerle ortak çalışma, Storybook ve versiyonlama süreçleri.",
+        "lessons": [
+          "YouTube içerik önerisi: Tasarımcılar için Storybook ve kod senkronizasyonu",
+          "Kurs yönlendirmesi: Developer handoff süreçleri",
+          "Alıştırma: Handoff kontrol listesi hazırlama"
+        ],
+        "project": "Yazılım ekibinin test edebileceği eksiksiz bir tasarım kiti teslimi yap."
       }
     ]
   },
   {
-    "id": "performance-marketing",
-    "title": "Performans Pazarlama Uzmanı",
-    "track": "Dijital Pazarlama",
+    "id": "motion-design",
+    "title": "Arayüz Animasyon ve Motion Tasarımcısı",
+    "track": "UI/UX Tasarım",
     "level": "Orta",
-    "duration": "8 hafta",
-    "summary": "Kampanya hedeflerini belirle, ölçüm planı kur ve reklam sonuçlarını veriye göre yorumla.",
-    "color": "#DA7C2D",
-    "order": 5,
+    "duration": "6 hafta",
+    "summary": "Dijital ürünlere karakter katmak için micro-interaction, geçiş ve animasyon prensiplerini öğren.",
+    "color": "#DB2777",
+    "order": 10,
     "modules": [
       {
-        "title": "Pazarlama ve ölçüm temelleri",
-        "description": "Hedef kitleyi, dönüşüm hedefini ve temel performans metriklerini tanımla.",
+        "title": "Animasyonun temelleri",
+        "description": "Disney'in 12 animasyon prensibinin dijital arayüze uyarlanması.",
         "lessons": [
-          "YouTube içerik önerisi: Dijital pazarlama hunisi",
-          "Kurs yönlendirmesi: Google Analytics ve ölçüm temelleri",
-          "Alıştırma: Bir ürün için dönüşüm hedefi belirle"
+          "YouTube içerik önerisi: UI animasyon prensipleri",
+          "Kurs yönlendirmesi: Motion design temelleri",
+          "Alıştırma: Basit bir yükleme (loader) animasyonu tasarlama"
         ],
-        "project": "Küçük bir e-ticaret ürünü için ölçülebilir kampanya özeti yaz."
+        "project": "Farklı durumlar için üç adet özgün loader animasyonu üret."
       },
       {
-        "title": "Kampanya kurgusu",
-        "description": "Arama ve sosyal reklamlar için mesaj, hedefleme ve bütçe yaklaşımı geliştir.",
+        "title": "Micro-interaction tasarımı",
+        "description": "Kullanıcı etkileşimlerini geri bildirimler ile zenginleştirme.",
         "lessons": [
-          "YouTube içerik önerisi: Reklam kampanyası yapısı",
-          "Kurs yönlendirmesi: Arama reklamı ve anahtar kelime araştırması",
-          "Alıştırma: Reklam grupları ve mesaj varyasyonları tasarla"
+          "YouTube içerik önerisi: Figma Smart Animate kullanımı",
+          "Kurs yönlendirmesi: Etkileşimli geçişler",
+          "Alıştırma: Beğen ve sepete ekle buton animasyonları"
         ],
-        "project": "Varsayımsal lansman için kanal ve reklam metni taslağı hazırla."
+        "project": "Bir e-ticaret uygulamasında micro-interaction akışı tasarla."
       },
       {
-        "title": "Raporlama ve optimizasyon",
-        "description": "Sonuçları hedeflerle karşılaştır ve bir sonraki deneyi seç.",
+        "title": "Sayfa geçişleri ve prototipleme",
+        "description": "Ekranlar arası akıcı ve anlamlı geçiş senaryoları kurgulama.",
         "lessons": [
-          "YouTube içerik önerisi: Kampanya KPI'ları ve raporlama",
-          "Kurs yönlendirmesi: A/B testi ve optimizasyon",
-          "Alıştırma: Örnek sonuçlardan bir optimizasyon hipotezi kur"
+          "YouTube içerik önerisi: İleri düzey prototype teknikleri",
+          "Kurs yönlendirmesi: After Effects veya Rive ile arayüz animasyonu",
+          "Alıştırma: Detay sayfası açılış animasyonu"
         ],
-        "project": "Örnek kampanya verisinden haftalık performans raporu oluştur."
+        "project": "Mobil uygulama için animasyonlu bir onboarding akışı sun."
       }
     ]
   },
   {
-    "id": "content-marketing",
-    "title": "İçerik Pazarlama Uzmanı",
+    "id": "seo-specialist",
+    "title": "SEO Uzmanı",
+    "track": "Dijital Pazarlama",
+    "level": "Zor",
+    "duration": "10 hafta",
+    "summary": "Arama motoru optimizasyonu ile web sitelerinin organik trafiğini artır, teknik ve içeriksel iyileştirmeler yap.",
+    "color": "#059669",
+    "order": 11,
+    "modules": [
+      {
+        "title": "Teknik SEO temelleri",
+        "description": "Site hızı, tarama bütçesi, robots.txt ve site haritası optimizasyonu.",
+        "lessons": [
+          "YouTube içerik önerisi: Teknik SEO denetimi nasıl yapılır?",
+          "Kurs yönlendirmesi: Web siteleri için teknik optimizasyon",
+          "Alıştırma: Screaming Frog ile site taraması yapma"
+        ],
+        "project": "Örnek bir web sitesinin teknik SEO açıklarını raporla."
+      },
+      {
+        "title": "Anahtar kelime stratejisi",
+        "description": "Arama hacmi, rekabet analizi ve kullanıcı niyetine göre anahtar kelime haritalama.",
+        "lessons": [
+          "YouTube içerik önerisi: Semrush ve Ahrefs kullanımı",
+          "Kurs yönlendirmesi: İleri düzey anahtar kelime araştırması",
+          "Alıştırma: Hedef kitle için kelime kümesi çıkarma"
+        ],
+        "project": "Bir blog için 3 aylık anahtar kelime strateji tablosu hazırla."
+      },
+      {
+        "title": "İçiçe (On-Page) ve Dışa (Off-Page) SEO",
+        "description": "İçerik optimizasyonu, meta etiketler ve backlink edinme stratejileri.",
+        "lessons": [
+          "YouTube içerik önerisi: Kaliteli backlink toplama taktikleri",
+          "Kurs yönlendirmesi: On-page SEO en iyi uygulamaları",
+          "Alıştırma: Mevcut bir yazıyı SEO uyumlu hale getirme"
+        ],
+        "project": "Belirlenen anahtar kelimede birinci sıraya oynamak için optimizasyon planı yap."
+      },
+      {
+        "title": "Google Search Console ve Raporlama",
+        "description": "Performans takibi, hata giderme ve trafik analizi.",
+        "lessons": [
+          "YouTube içerik önerisi: Google Search Console rehberi",
+          "Kurs yönlendirmesi: SEO analitiği ve raporlama",
+          "Alıştırma: Tıklama ve gösterim verilerini yorumlama"
+        ],
+        "project": "Aylık organik trafik büyüme ve iyileştirme raporu sun."
+      }
+    ]
+  },
+  {
+    "id": "social-media-manager",
+    "title": "Sosyal Medya Yöneticisi",
     "track": "Dijital Pazarlama",
     "level": "Başlangıç",
-    "duration": "7 hafta",
-    "summary": "İçerik stratejisi oluştur, arama niyetine uygun içerikler üret ve etkisini takip et.",
-    "color": "#B27624",
-    "order": 6,
+    "duration": "6 hafta",
+    "summary": "Marka sesini belirle, sosyal medya platformları için içerik takvimi oluştur ve topluluk yönetimi yap.",
+    "color": "#D97706",
+    "order": 12,
     "modules": [
       {
-        "title": "Kitle ve içerik stratejisi",
-        "description": "Hedef kitleyi, ihtiyaçlarını ve markanın içerik alanlarını tanımla.",
+        "title": "Sosyal medya stratejisi ve marka sesi",
+        "description": "Platform seçimi, hedef kitle analizi ve marka dili oluşturma.",
         "lessons": [
-          "YouTube içerik önerisi: İçerik pazarlaması ve hedef kitle",
-          "Kurs yönlendirmesi: İçerik stratejisi oluşturma",
-          "Alıştırma: Üç içerik sütunu ve hedef kitlesini eşleştir"
+          "YouTube içerik önerisi: Doğru sosyal medya stratejisi kurma",
+          "Kurs yönlendirmesi: Marka kimliği ve sosyal medya dili",
+          "Alıştırma: Rakip analizi ve SWOT matrisi çıkarma"
         ],
-        "project": "Bir marka için hedef kitle ve içerik stratejisi özeti hazırla."
+        "project": "Bir marka için sosyal medya duruş ve strateji belgesi hazırla."
       },
       {
-        "title": "SEO ve içerik üretimi",
-        "description": "Arama niyetini incele, içerik taslağı çıkar ve editoryal standart belirle.",
+        "title": "İçerik üretimi ve görsel trendler",
+        "description": "Instagram, TikTok ve LinkedIn için post, Reels ve hikaye kurgulama.",
         "lessons": [
-          "YouTube içerik önerisi: SEO ve arama niyeti",
-          "Kurs yönlendirmesi: SEO içerik yazarlığı",
-          "Alıştırma: Anahtar kelime kümesinden içerik brief'i oluştur"
+          "YouTube içerik önerisi: Canva ve temel tasarım ipuçları",
+          "Kurs yönlendirmesi: Viral içerik üretme teknikleri",
+          "Alıştırma: 5 günlük içerik fikri üretme"
         ],
-        "project": "Arama niyetine uygun, başlıklandırılmış bir blog yazısı taslağı üret."
+        "project": "Farklı platformlar için 2 haftalık görsel/metin içerik paketi hazırla."
       },
       {
-        "title": "Dağıtım ve etki ölçümü",
-        "description": "İçeriği kanallara göre uyarlayıp performans hedeflerini takip et.",
+        "title": "Topluluk yönetimi ve kriz iletişimi",
+        "description": "Takipçi etkileşimi, yorum yönetimi ve olası kriz senaryolarına hazırlık.",
         "lessons": [
-          "YouTube içerik önerisi: İçerik dağıtım kanalları",
-          "Kurs yönlendirmesi: İçerik performansı ve analitik",
-          "Alıştırma: Bir içeriği üç kanal için yeniden kurgula"
+          "YouTube içerik önerisi: Sosyal medyada kriz yönetimi",
+          "Kurs yönlendirmesi: Etkili topluluk oluşturma",
+          "Alıştırma: Örnek bir müşteri şikayetine profesyonel yanıt yazma"
         ],
-        "project": "Dört haftalık yayın takvimi ve temel ölçüm tablosu hazırla."
+        "project": "Kriz senaryosu içeren topluluk yönetimi rehberi oluştur."
+      }
+    ]
+  },
+  {
+    "id": "cyber-security",
+    "title": "Siber Güvenlik Uzmanı",
+    "track": "Yazılım",
+    "level": "Zor",
+    "duration": "16 hafta",
+    "summary": "Temel ağ güvenliği, sızma testleri (penetration testing) ve sistem zafiyetlerini analiz etme.",
+    "color": "#1E293B",
+    "order": 13,
+    "modules": [
+      {
+        "title": "Ağ temelleri ve protokoller",
+        "description": "TCP/IP, DNS, OSI katmanları ve ağ trafiği analizi.",
+        "lessons": [
+          "YouTube içerik önerisi: Ağ mimarisi ve temel protokoller",
+          "Kurs yönlendirmesi: Wireshark ile paket analizi",
+          "Alıştırma: Yerel ağ trafiğini inceleme"
+        ],
+        "project": "Temel bir ağ güvenliği denetim raporu hazırla."
+      },
+      {
+        "title": "İşletim sistemi ve Linux güvenliği",
+        "description": "Linux komut satırı, yetkilendirme mekanizmaları ve servis güvenliği.",
+        "lessons": [
+          "YouTube içerik önerisi: Siber güvenlikçiler için Linux",
+          "Kurs yönlendirmesi: Sistem sıkılaştırma (Hardening)",
+          "Alıştırma: Kullanıcı yetkilerini yapılandırma"
+        ],
+        "project": "Bir Linux sunucusunu dış saldırılara karşı güvenli hale getir."
+      },
+      {
+        "title": "Zafiyet taraması ve sızma testleri",
+        "description": "OWASP Top 10 açıkları, Nmap ve Metasploit kullanımı.",
+        "lessons": [
+          "YouTube içerik önerisi: OWASP Top 10 nedir?",
+          "Kurs yönlendirmesi: Temel sızma testi eğitimleri",
+          "Alıştırma: Zafiyet tespiti yapma"
+        ],
+        "project": "Güvensiz tasarlanmış bir test uygulamasında SQLinjection açığını tespit et."
+      },
+      {
+        "title": "Olay müdahale ve adli bilişim",
+        "description": "Saldırı anında müdahale yöntemleri ve log analizi.",
+        "lessons": [
+          "YouTube içerik önerisi: Siber olaylara müdahale süreçleri",
+          "Kurs yönlendirmesi: Dijital adli bilişime giriş",
+          "Alıştırma: Sunucu loglarını analiz etme"
+        ],
+        "project": "Simüle edilmiş bir sızma vakasının olay sonrası analiz raporunu yaz."
+      }
+    ]
+  },
+  {
+    "id": "game-development",
+    "title": "Oyun Geliştirici (Unity)",
+    "track": "Yazılım",
+    "level": "Orta",
+    "duration": "12 hafta",
+    "summary": "Unity motoru ve C# programlama dili ile 2D/3D oyun mekanikleri tasarla ve prototiple.",
+    "color": "#4338CA",
+    "order": 14,
+    "modules": [
+      {
+        "title": "C# ve Unity arayüzü",
+        "description": "C# programlama temelleri ve Unity editörünün kullanımı.",
+        "lessons": [
+          "YouTube içerik önerisi: Unity ve C# temelleri",
+          "Kurs yönlendirmesi: Unity ile oyun programlamaya giriş",
+          "Alıştırma: Karakter hareket kodları yazma"
+        ],
+        "project": "Basit bir platform oyunu prototipi oluştur."
+      },
+      {
+        "title": "Oyun mekanikleri ve fizik",
+        "description": "Çarpışma algılama, yerçekimi, raycast ve kullanıcı girdileri.",
+        "lessons": [
+          "YouTube içerik önerisi: Unity Rigidbody ve Collider mantığı",
+          "Kurs yönlendirmesi: 2D oyun fizik motoru kullanımı",
+          "Alıştırma: Zıplama ve toplama mekanikleri kodlama"
+        ],
+        "project": "Engellerden kaçma mekaniğine sahip sonsuz koşu oyunu yap."
+      },
+      {
+        "title": "UI ve oyun döngüsü",
+        "description": "Ana menü, skor tablosu ve oyun durdurma/başlatma ekranları.",
+        "lessons": [
+          "YouTube içerik önerisi: Unity UI sistemi (Canvas)",
+          "Kurs yönlendirmesi: Oyun yönetimi ve sahne geçişleri",
+          "Alıştırma: Skor kaydetme sistemi yazma"
+        ],
+        "project": "Başlangıç menüsü ve skor tablosu olan eksiksiz bir oyun döngüsü kur."
+      }
+    ]
+  },
+  {
+    "id": "ux-writing",
+    "title": "UX Yazarı",
+    "track": "UI/UX Tasarım",
+    "level": "Başlangıç",
+    "duration": "6 hafta",
+    "summary": "Kullanıcı arayüzlerindeki metinleri daha anlaşılır, yönlendirici ve marka diline uygun hale getir.",
+    "color": "#9333EA",
+    "order": 15,
+    "modules": [
+      {
+        "title": "UX yazarlığına giriş",
+        "description": "Mikro metinlerin önemi, netlik ve kullanıcı rehberliği.",
+        "lessons": [
+          "YouTube içerik önerisi: UX Writing nedir ve nasıl yapılır?",
+          "Kurs yönlendirmesi: Dijital ürünlerde mikro metin tasarımı",
+          "Alıştırma: Anlaşılmaz bir hata mesajını iyileştirme"
+        ],
+        "project": "Karmaşık bir form için yönlendirici hata ve başarı mesajları yaz."
+      },
+      {
+        "title": "Butonlar ve yönlendirici metinler",
+        "description": "CTA (Call to Action) metinleri ve kullanıcıyı eyleme geçirme teknikleri.",
+        "lessons": [
+          "YouTube içerik önerisi: Etkili CTA yazma taktikleri",
+          "Kurs yönlendirmesi: Kullanıcı akışlarında metin mimarisi",
+          "Alıştırma: Farklı durumlar için buton metni alternatifleri"
+        ],
+        "project": "Bir e-ticaret ödeme adımı için buton ve yönlendirme metinleri tasarla."
+      },
+      {
+        "title": "Ses tonu kılavuzu ve test",
+        "description": "Marka ses tonunu belirleme ve metinlerin kullanılabilirliğini test etme.",
+        "lessons": [
+          "YouTube içerik önerisi: Marka ses tonu (Tone of Voice) oluşturma",
+          "Kurs yönlendirmesi: Metin testleri ve veri odaklı yazarlık",
+          "Alıştırma: İki farklı metin varyasyonu ile A/B testi kurgulama"
+        ],
+        "project": "Bir uygulama için minik bir 'Voice & Tone' kılavuzu hazırla."
+      }
+    ]
+  },
+  {
+    "id": "design-thinking",
+    "title": "Design Thinking Kolaylaştırıcısı",
+    "track": "UI/UX Tasarım",
+    "level": "Orta",
+    "duration": "8 hafta",
+    "summary": "Yenilikçi problem çözme metodolojisini öğren, atölye çalışmaları (workshop) planla ve yönet.",
+    "color": "#6D28D9",
+    "order": 16,
+    "modules": [
+      {
+        "title": "Empati ve problem tanımı",
+        "description": "Design Thinking aşamaları, empati haritaları ve kök neden analizi.",
+        "lessons": [
+          "YouTube içerik önerisi: Design Thinking metodolojisine genel bakış",
+          "Kurs yönlendirmesi: Problem tanımı ve empati teknikleri",
+          "Alıştırma: Problem cümlesi (POV) oluşturma"
+        ],
+        "project": "Bir sosyal sorun için empati haritası ve problem tanımı çıkar."
+      },
+      {
+        "title": "Fikir üretme ve prototipleme",
+        "description": "Beyin fırtınası teknikleri, Crazy Eights ve hızlı prototip atölyeleri.",
+        "lessons": [
+          "YouTube içerik önerisi: Crazy Eights egzersizi nasıl yapılır?",
+          "Kurs yönlendirmesi: Hızlı prototipleme ve fikir eleme",
+          "Alıştırma: 8 dakikada 8 fikir üretme"
+        ],
+        "project": "Fikir havuzundan en iyi çözümü seçip kağıt prototipini hazırla."
+      },
+      {
+        "title": "Atölye yönetimi (Workshop facilitation)",
+        "description": "Miro/Mural kullanımı, katılımcı yönetimi ve süreç kolaylaştırıcılığı.",
+        "lessons": [
+          "YouTube içerik önerisi: Uzaktan workshop yönetme ipuçları",
+          "Kurs yönlendirmesi: Kolaylaştırıcılık becerileri",
+          "Alıştırma: Atölye akış planı (Agenda) yazma"
+        ],
+        "project": "Kurum içi bir inovasyon atölyesi için tam günlük ajanda ve sunum hazırla."
+      }
+    ]
+  },
+  {
+    "id": "growth-marketing",
+    "title": "Growth Hacking ve Büyüme Uzmanı",
+    "track": "Dijital Pazarlama",
+    "level": "Zor",
+    "duration": "10 hafta",
+    "summary": "AARRR hunisi, deney kültürü ve ölçeklenebilir büyüme stratejileri ile ürün büyümesini hızlandır.",
+    "color": "#B45309",
+    "order": 17,
+    "modules": [
+      {
+        "title": "Growth hacking temelleri ve AARRR",
+        "description": "Edinme, etkinleşme, elde tutma, gelir ve tavsiye metrikleri analizi.",
+        "lessons": [
+          "YouTube içerik önerisi: AARRR korsan hunisi nedir?",
+          "Kurs yönlendirmesi: Growth marketing temelleri",
+          "Alıştırma: Ürün için honi metriklerini haritalandırma"
+        ],
+        "project": "Bir girişim için AARRR metrik analiz tablosu oluştur."
+      },
+      {
+        "title": "Deney tasarımı ve hızlı testler",
+        "description": "ICE skorlama modeli, hipotez kurma ve büyüme deneyleri.",
+        "lessons": [
+          "YouTube içerik önerisi: ICE skorlama yöntemi ile fikir önceliklendirme",
+          "Kurs yönlendirmesi: Dijital dünyada deney kültürü",
+          "Alıştırma: 3 farklı büyüme hipotezi yazma"
+        ],
+        "project": "Bir ürünün dönüşüm oranını artırmak için deney planı tasarla."
+      },
+      {
+        "title": "Viral döngüler ve yönlendirme",
+        "description": "K-faktörü, viral katsayı ve organik büyüme mekanizmaları.",
+        "lessons": [
+          "YouTube içerik önerisi: Viral loop mekanizmaları nasıl kurulur?",
+          "Kurs yönlendirmesi: Tavsiye (Referral) programı tasarımı",
+          "Alıştırma: Arkadaşını getir kampanyası kurgulama"
+        ],
+        "project": "Mobil uygulama için ödüllü bir viral davet programı kurgula."
+      },
+      {
+        "title": "Veri analitiği ve cohort analizi",
+        "description": "Kullanıcı tutma (retention) oranları ve kohort segmentasyonu.",
+        "lessons": [
+          "YouTube içerik önerisi: Cohort analizi nasıl okunur?",
+          "Kurs yönlendirmesi: Ürün büyüme analitiği",
+          "Alıştırma: Kullanıcı kaybı (churn) nedenlerini inceleme"
+        ],
+        "project": "Örnek veri seti üzerinden kullanıcı sadakati kohort raporu hazırla."
+      }
+    ]
+  },
+  {
+    "id": "email-marketing",
+    "title": "E-Posta Pazarlama Uzmanı",
+    "track": "Dijital Pazarlama",
+    "level": "Başlangıç",
+    "duration": "6 hafta",
+    "summary": "Kitle segmentasyonu, otomasyon akışları ve etkili bülten tasarımları ile sadık müşteri topluluğu yarat.",
+    "color": "#D97706",
+    "order": 18,
+    "modules": [
+      {
+        "title": "E-posta pazarlamaya giriş ve liste oluşturma",
+        "description": "Opt-in stratejileri, bülten aboneliği artırma ve veritabanı hijyeni.",
+        "lessons": [
+          "YouTube içerik önerisi: Mailchimp veya Klaviyo kullanımı",
+          "Kurs yönlendirmesi: E-posta pazarlama temelleri",
+          "Alıştırma: İlgi çekici bir bülten kayıt formu tasarlama"
+        ],
+        "project": "E-ticaret sitesi için e-posta toplama stratejisi planı hazırla."
+      },
+      {
+        "title": "Otomasyon ve segmentasyon",
+        "description": "Hoş geldin serileri, sepet hatırlatmaları ve hedefli müşteri segmentleri.",
+        "lessons": [
+          "YouTube içerik önerisi: Otomatik e-posta akışları kurma",
+          "Kurs yönlendirmesi: Davranışsal e-posta segmentasyonu",
+          "Alıştırma: 3 adımlı karşılama serisi kurgulama"
+        ],
+        "project": "Terkedilmiş sepet (abandoned cart) otomasyon akışı tasarla."
+      },
+      {
+        "title": "Metin yazarlığı ve deliverability",
+        "description": "Konu başlığı (subject line) optimizasyonu ve spam filtrelerinden kaçınma.",
+        "lessons": [
+          "YouTube içerik önerisi: Açılma oranını artıran konu başlıkları",
+          "Kurs yönlendirmesi: E-posta deliverability (teslimat) optimizasyonu",
+          "Alıştırma: 5 farklı konu başlığı alternatifi yazma"
+        ],
+        "project": "Örnek bir ürün kampanyası için bülten metni ve tasarım taslağı üret."
       }
     ]
   }
